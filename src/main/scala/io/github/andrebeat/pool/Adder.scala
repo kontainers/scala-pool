@@ -18,12 +18,5 @@ private[pool] trait Adder {
 }
 
 private[pool] object Adder {
-  def apply() =
-    try {
-      this.getClass.getClassLoader().loadClass("java.util.concurrent.atomic.LongAdder")
-      new Jdk8Adder()
-    } catch {
-      case e: ClassNotFoundException =>
-        new Jdk7Adder()
-    }
+  def apply() = new Jdk8Adder()
 }
