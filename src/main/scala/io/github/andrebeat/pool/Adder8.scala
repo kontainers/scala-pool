@@ -12,3 +12,4 @@ final private[pool] class Jdk7Adder extends AtomicLong with Adder {
   def count() = this.get
 }
 // $COVERAGE-ON$
+

@@ -1,16 +1,16 @@
 name := "scala-pool"
 
-organization := "io.github.andrebeat"
+organization := "io.kontainers"
 startYear := Some(2015)
 
 version := "0.5.0-SNAPSHOT"
 
-scalaVersion := "2.12.4"
+scalaVersion := "2.13.1"
 
-crossScalaVersions := Seq("2.11.11", "2.10.6")
+crossScalaVersions := Seq("2.11.12", "2.12.10")
 
 libraryDependencies ++= Seq(
-  "org.specs2" %% "specs2-core" % "3.9.5" % "test")
+  "org.specs2" %% "specs2-core" % "4.8.1" % "test")
 
 resolvers ++= Seq(
   "snapshots"           at "https://oss.sonatype.org/content/repositories/snapshots",
@@ -24,17 +24,6 @@ scalacOptions ++= Seq(
   "-language:existentials",
   "-language:higherKinds",
   "-language:implicitConversions")
-
-val javaVersion = settingKey[String]("Java version")
-javaVersion := System.getProperty("java.version")
-
-unmanagedSourceDirectories in Compile += {
-  val v  = javaVersion.value
-  val dir = (sourceDirectory in Compile).value
-
-  if (v.startsWith("1.8")) dir / "java_8"
-  else dir / "java_7"
-}
 
 scalacOptions in Test ++= Seq("-Yrangepos")
 
@@ -59,4 +48,4 @@ ScalariformKeys.preferences := ScalariformKeys.preferences.value
 
 enablePlugins(SiteScaladocPlugin)
 enablePlugins(GhpagesPlugin)
-git.remoteRepo := s"""https://${sys.env.getOrElse("GH_TOKEN", "NULL")}@github.com/andresilva/scala-pool.git"""
+git.remoteRepo := s"""https://${sys.env.getOrElse("GH_TOKEN", "NULL")}@github.com/kontainers/scala-pool.git"""
