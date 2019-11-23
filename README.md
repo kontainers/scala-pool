@@ -33,7 +33,7 @@ libraryDependencies += "io.github.andrebeat" %% "scala-pool" % "0.4.1"
 The latest snapshot version is also available:
 
 ```scala
-libraryDependencies += "io.github.andrebeat" %% "scala-pool" % "0.5.0-SNAPSHOT"
+libraryDependencies += "io.kontainers" %% "scala-pool" % "0.5.0-SNAPSHOT"
 ```
 
 It might be necessary to add the Sonatype OSS Snapshot resolver:
